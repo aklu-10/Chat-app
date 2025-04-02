@@ -2,17 +2,30 @@ import React from 'react'
 import Title from '../shared/Title'
 import { Grid } from '@mui/material'
 import Header from './Header'
+import ChatList from '../specific/ChatList'
+import { samplechats } from '../../constants/sampleData'
+import { useParams } from 'react-router-dom'
+import Profile from '../specific/Profile'
 
 const AppLayout = () => WrapperComponent => {
   return props => {
+
+    const params = useParams();
+    const chatId = params.chatId;
+
+
+    const handleDeleteChat = (e, _id, groupChat) => {
+      e.preventDefault();
+      console.log("E", e, _id, groupChat)
+    }
+
     return (
       <>
         <Title />
 
-        <Header/>
+        <Header />
 
         <Grid container height={'calc(100vh - 4rem)'}>
-
           <Grid
             size={{ sm: 4, md: 3 }}
             sx={{
@@ -20,13 +33,30 @@ const AppLayout = () => WrapperComponent => {
               display: { xs: 'none', sm: 'block' }
             }}
           >
-            First
+            {/* First */}
+            {/* <ChatList chats={[1, 2, 3, 4, 5]}/> */}
+            {/* <ChatList
+              chats={samplechats}
+              chatId={chatId}
+              newMessagesAlert={[
+                {
+                  chatId,
+                  count: 4
+                }
+              ]}
+              onlineUsers={["123456", "67890"]}
+            /> */}
+             <ChatList
+              chats={samplechats}
+              chatId={chatId}
+              handleDeleteChat={handleDeleteChat}
+            />
           </Grid>
 
           <Grid
             size={{ xs: 12, sm: 8, md: 5, lg: 6 }}
             sx={{ height: '100%' }}
-            bgcolor={'primary.main'}
+            // bgcolor={'primary.main'}
           >
             <WrapperComponent {...props} />
           </Grid>
@@ -40,9 +70,9 @@ const AppLayout = () => WrapperComponent => {
               bgcolor: 'rgba(0, 0, 0, .85)'
             }}
           >
-            Third
+            {/* Third */}
+            <Profile/>
           </Grid>
-
         </Grid>
       </>
     )
