@@ -22,10 +22,9 @@ const AppLayout = () => WrapperComponent => {
       <>
         <Title />
 
-        <Header/>
+        <Header />
 
         <Grid container height={'calc(100vh - 4rem)'}>
-
           <Grid
             size={{ sm: 4, md: 3 }}
             sx={{
@@ -50,7 +49,7 @@ const AppLayout = () => WrapperComponent => {
           <Grid
             size={{ xs: 12, sm: 8, md: 5, lg: 6 }}
             sx={{ height: '100%' }}
-            bgcolor={'primary.main'}
+            // bgcolor={'primary.main'}
           >
             <WrapperComponent {...props} />
           </Grid>
@@ -66,7 +65,6 @@ const AppLayout = () => WrapperComponent => {
           >
             <Profile/>
           </Grid>
-
         </Grid>
       </>
     )

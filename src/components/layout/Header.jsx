@@ -1,3 +1,4 @@
+import { Add, Group, Logout, Menu, Notifications, Search } from '@mui/icons-material';
 import {
   AppBar,
   Backdrop,
@@ -8,9 +9,8 @@ import {
   Typography
 } from '@mui/material';
 import React, { lazy, Suspense, useState } from 'react';
-import { orange } from '../../constants/color';
-import { Add, Group, Logout, Menu, Notifications, Search } from '@mui/icons-material';
 import { useNavigate } from 'react-router-dom';
+import { orange } from '../../constants/color';
 
 const SearchDialog = lazy(()=>import('../specific/Search'));
 const NotificationDialog = lazy(()=>import('../specific/Notifications'));
