@@ -8,9 +8,11 @@ import './index.css'
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <HelmetProvider>
-      <CssBaseline>
-        <App />
-      </CssBaseline>
+      <div onContextMenu={e=>e.preventDefault()}>
+        <CssBaseline>
+          <App />
+        </CssBaseline>
+      </div>
     </HelmetProvider>
   </StrictMode>,
 )

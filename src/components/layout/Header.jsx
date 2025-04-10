@@ -112,7 +112,6 @@ const Header = () => {
 
 
               <IconBtn icon={<Logout/>} title={'Logout'} clickHandler={logoutHandler}/>
-
             </Box>
           </Toolbar>
         </AppBar>
