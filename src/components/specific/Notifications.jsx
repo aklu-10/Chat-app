@@ -30,7 +30,7 @@ const NotificationItem = ({ sender, _id, handler }) => {
   return (
     <ListItem>
         <Stack direction="row" spacing={'1rem'} alignItems={'center'} width={'100%'}>
-            <Avatar/>
+            <Avatar src={avatar}/>
 
             <Typography 
                 variant='body1'
