@@ -3,9 +3,8 @@ import React from 'react'
 import { sampleNotifications } from '../../constants/sampleData'
 
 const Notifications = () => {
-
+ 
   const friendRequestHandler = ({_id, accept}) => {
-
   }
 
   return (
