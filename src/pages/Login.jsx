@@ -4,6 +4,7 @@ import React, { useState } from 'react'
 import { VisuallyHidden } from '../components/styles/StyledComponent';
 import useInputValidation from '../hooks/useInputValidation';
 import useFileInput from '../hooks/useFileInput';
+import { transformImage } from '../lib/features';
 
 const Login = () => {
   
@@ -105,7 +106,7 @@ const Login = () => {
                   height: '10rem',
                   objectFit: 'contain'
                 }}
-                src={avatar.preview}
+                src={transformImage(avatar.preview)}
                 />
 
                 <IconButton sx={{
